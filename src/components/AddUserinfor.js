@@ -1,5 +1,5 @@
 import React from 'react';
-class UserInfor extends React.Component {
+class AddUserInfor extends React.Component {
         state = {
     name: 'Eric',
     address: "hoid dan IT",
@@ -20,34 +20,51 @@ class UserInfor extends React.Component {
       age: event.target.value,
     });
   }
+  handleOnChangeAddress = (event) =>{
+    this.setState({
+      address: event.target.value,
+    });
+  }
   handleOnSubmit = (event) => {
     event.preventDefault(); // Ngăn chặn hành động mặc định của form
-    alert('Form submitted');
+    this.props.handleAddnewUser({
+      id: Math.floor((Math.random() * 100)+1)+ '-random', // Tạo ID ngẫu nhiên
+      name: this.state.name,
+      age: this.state.age,
+      address: this.state.address
+    });
   }
   render() {
     return (
       <div>
         I'm a child component
          My name is {this.state.name}, I am {this.state.age} years old, I live in {this.state.address}
-        <form onSubmit={(event) => {this.handleOnSubmit(event)}}>
+        <form >
             <label>Name:</label>
             <input 
             value = {this.state.name}
             type='text'
             onChange={(event)=>{this.handleOnChangeInput(event)}}/>
-            <button> submit</button>
         </form>
 
-         <form onSubmit={(event) => {this.handleOnSubmit(event)}}>
+         <form >
             <label>Age:</label>
             <input 
             value = {this.state.age}
             type='text'
             onChange={(event)=>{this.handleOnChangeAge(event)}}/>
+          
+        </form>
+        <form onSubmit={(event) => {this.handleOnSubmit(event)}}>
+            <label>Address:</label>
+            <input 
+            value = {this.state.address}
+            type='text'
+            onChange={(event)=>{this.handleOnChangeAddress(event)}}/>
             <button> submit</button>
         </form>
       </div>
     );
   }
 }
-export default UserInfor;
+export default AddUserInfor;
