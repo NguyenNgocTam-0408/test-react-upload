@@ -10,6 +10,7 @@ import logo from '../logo.svg';
           isShowlistUser: !this.state.isShowlistUser
         })
       }
+  
 
    render() {
      console.log(this.props);
@@ -24,22 +25,25 @@ import logo from '../logo.svg';
             {this.state.isShowlistUser === true ? "hide list user" : "show list user"} </span>
         </div>
         {this.state.isShowlistUser && 
-          <div>
-          { listUser.map((user) =>
+          <>
+          { listUser.map((user, index) =>
           {
             console.log("check map user", user );
             return(
               <div key={user.id} className={user.age>18 ? "green": "red"}>
-                    <div> my name is {user.name}</div>
-                    <div> my address is {user.address}</div>
-                    <div> my age is {user.age}</div>
-                  </div>
-            )
+                    <div>
+                      <div> my name is {user.name}</div>
+                      <div> my address is {user.address}</div>
+                      <div> my age is {user.age}</div>
+                    </div>
+                    <div>
+                      <button onClick={() => this.props.handleOnClickDelete(user.id)}>Delete</button>
+                    </div>
+              </div>
+            );
           })
-
           }
-        
-       </div>
+       </>
    }
        </div>
      );
