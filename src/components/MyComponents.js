@@ -17,7 +17,8 @@ class MyComponent extends React.Component {
     }
   render() {
     return (
-      <div>
+      <>
+      <div className='a'>
 
 
         <AddUserinfor 
@@ -29,6 +30,9 @@ class MyComponent extends React.Component {
        
         <hr />
       </div>
+      <div className='b'>
+      </div>
+      </>
     );
   }
 }
