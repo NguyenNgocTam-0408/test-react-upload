@@ -2,8 +2,12 @@ import React from "react";
 import './Displayinfor.scss';
 import logo from '../logo.svg';
  class DisplayInfor extends React.Component {
-  state = {
-    isShowlistUser: true,
+  constructor(props) {
+    console.log(">> check consstructor: 1")
+    super(props);
+    this.state = {
+      isShowlistUser: true,
+    };
   }
   handleShowhide = ()=>{
         this.setState({
@@ -11,8 +15,22 @@ import logo from '../logo.svg';
         })
       }
   
+  componentDidMount()
+  {
+    console.log("Component did mount");
+    setTimeout(() => {
+      document.title = "TAm hoc react"
+    }, 3000);
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log("Component did update",this.props);
+    if(this.props.listUser !== prevProps.listUser) {
+      if(this.props.listUser.length > 5) {
+        alert('ban dax dang ki 5 thanh vien')
+  }}}
 
    render() {
+    console.log(">> check render: 2");
      console.log(this.props);
          const { listUser } = this.props;
         //  console.log(listUser);
