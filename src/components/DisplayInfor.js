@@ -67,7 +67,7 @@ const DisplayInfor = (props) => {
                       <div> my age is {user.age}</div>
                     </div>
                     <div>
-                      <button onClick={() => this.props.handleOnClickDelete(user.id)}>Delete</button>
+                      <button onClick={() => props.handleOnClickDelete(user.id)}>Delete</button>
                     </div>
               </div>
             );
