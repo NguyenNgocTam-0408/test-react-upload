@@ -16,10 +16,17 @@ body {
     .navbar-nav {
       .nav-link{
         &.active{
+          z-index: 10;
+          opacity: 1;
           color: blue;
           font-weight: bold;
         }
       }
     }
   }
+}
+video {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
 }

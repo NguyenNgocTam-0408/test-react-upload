@@ -1,8 +1,13 @@
+import Videohomepage from 'D:/test-react-upload/src/assets/videohomepage.mp4'
+
 const Home = () =>{
     return(
         <div className="homepage-container">
-            <h2>Welcome to React Router</h2>
-        </div>
+            <video  autoPlay loop muted>
+                <source src={Videohomepage} type="video/mp4"/>
+            </video>
+            </div>
+
     )
 }
 export  default Home;
