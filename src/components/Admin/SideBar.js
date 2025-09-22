@@ -1,4 +1,6 @@
 import 'react-pro-sidebar/dist/css/styles.css';
+import { Link } from 'react-router-dom';
+
 
 import {
     ProSidebar,
@@ -49,6 +51,7 @@ const SideBar = (props) => {
                             suffix={<span className="badge red">New</span>}
                         >
                             dashboard
+                            <Link to="/admins" />
                         </MenuItem>
                     </Menu>
                     <Menu iconShape="circle">
@@ -57,7 +60,8 @@ const SideBar = (props) => {
                             icon={<FaGem />}
                             title="feature"
                         >
-                            <MenuItem> Quản lý user</MenuItem>
+                            <MenuItem> Quản lý user
+                            <Link to="/admins/manage-users" /></MenuItem>
                             <MenuItem> Quản lý bài viết quiz</MenuItem>
                             <MenuItem> Quản lý câu hỏi</MenuItem>
                         </SubMenu>
