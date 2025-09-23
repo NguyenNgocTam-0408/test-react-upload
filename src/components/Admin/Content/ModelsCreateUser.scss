@@ -1,0 +1,36 @@
+.manage-user-container {
+    .user-content {}
+}
+
+.modal-add-user {
+    .imageriview {
+        .preview-image-user {
+            margin: 0;
+            height: 100vh;
+            /* full chiều cao màn hình */
+            display: flex;
+            justify-content: center;
+            /* căn ngang */
+            align-items: center;
+            border-radius: 8px;         /* bo góc */
+            border: 2px dashed #515b68;
+            padding-left: 5px;
+
+            .item1 {
+                cursor: pointer;
+                color: #515b68;
+                font-weight: bold;
+                &:hover {
+                    color:red;
+                    font-size: 20px;
+                }
+            }
+            .item-image {
+                width: 50%;
+                height: 50%;
+                object-fit: cover;
+                border-radius: 8px;   
+                  }      /* bo góc */
+        }
+    }
+}
